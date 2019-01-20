@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
+use App\Http\Requests\PostRequest;
 use App\Http\Requests;
 
 class AdminPostsController extends BaseController
@@ -40,7 +40,7 @@ class AdminPostsController extends BaseController
         return redirect()->route('admin.posts.index');
     }
 
-    public function update(Request$request,$id)
+    public function update(PostRequest $request,$id)
     {
         $post=Post::find($id);
         $post->update($request->all());
