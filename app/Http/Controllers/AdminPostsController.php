@@ -32,6 +32,7 @@ class AdminPostsController extends BaseController
 
         return view('admin.posts.edit', $data);
     }
+    
     public function store(PostRequest $request)
     {
         Post::create($request->all());
